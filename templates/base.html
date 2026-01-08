@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Student Management{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="header">
+    <h1>🎓 Student Management System</h1>
+
+    <div class="nav">
+        <a href="/">View Students</a> |
+        <a href="/add">Add Student</a> |
+        <a href="/logout">Logout</a>
+    </div>
+</div>
+
+<hr>
+
+{% block content %}{% endblock %}
+
+</body>
+</html>

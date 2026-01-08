@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Student{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Edit Student</h2>
+
+    <form method="post">
+        <input name="name" value="{{ student[1] }}" required><br><br>
+        <input name="email" value="{{ student[2] }}" required><br><br>
+        <input name="course" value="{{ student[3] }}" required><br><br>
+        <input type="number" name="marks" value="{{ student[4] }}" required><br><br>
+
+        <button>Update</button>
+        <br><br>
+        <a href="/">Cancel</a>
+    </form>
+</div>
+{% endblock %}

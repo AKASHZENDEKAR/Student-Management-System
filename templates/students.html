@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Students{% endblock %}
+
+{% block content %}
+<h2>Student List</h2>
+<form method="get" action="/">
+    <input
+        type="text"
+        name="search"
+        placeholder="Search by name, email, course"
+        value="{{ search }}"
+    >
+    <button>Search</button>
+    <a href="/">Clear</a>
+</form>
+
+<br>
+
+
+<table border="1">
+<tr>
+  <th>id</th><th>Name</th><th>Email</th>
+  <th>Course</th><th>Marks</th><th>Action</th>
+</tr>
+
+{% for s in students %}
+<tr>
+  <td>{{ s[0] }}</td>
+  <td>{{ s[1] }}</td>
+  <td>{{ s[2] }}</td>
+  <td>{{ s[3] }}</td>
+  <td>{{ s[4] }}</td>
+  <td>
+  <a href="/edit/{{ s[0] }}">Edit</a> |
+  <a href="/delete/{{ s[0] }}">Delete</a>
+</td>
+
+</tr>
+
+ 
+
+{% endfor %}
+</table>
+{% endblock %}
