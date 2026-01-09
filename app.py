@@ -7,8 +7,12 @@ app = Flask(__name__)
 app.secret_key = "secret123"
 
 # ---------------- DATABASE ----------------
+import os
+
 def get_db():
-    return sqlite3.connect("students_database.db")
+    db_path = os.path.join("/tmp", "students_database.db")
+    return sqlite3.connect(db_path)
+
 
 # ---------------- INIT DATABASE (RUN ONCE) ----------------
 @app.route("/init")
